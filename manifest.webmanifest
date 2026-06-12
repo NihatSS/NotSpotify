@@ -1,0 +1,9 @@
+{
+  "name": "PulseStream Music Streaming Platform",
+  "short_name": "PulseStream",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#101214",
+  "theme_color": "#1ed760",
+  "icons": []
+}

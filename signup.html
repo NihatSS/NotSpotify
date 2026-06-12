@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | PulseStream</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-card">
+    <a class="brand" href="index.html"><span class="brand-mark">P</span><span>PulseStream</span></a>
+    <a class="secondary-button auth-back" href="index.html">Back to Home</a>
+    <h1>Create account</h1>
+    <form id="signupForm" class="auth-form">
+      <label>Name<input type="text" id="signupName" required /></label>
+      <label>Email<input type="email" id="signupEmail" required /></label>
+      <label>Password<input type="password" id="signupPassword" minlength="4" required /></label>
+      <label>Account type
+        <select id="accountType">
+          <option value="listener">Listener</option>
+          <option value="artist">Artist</option>
+        </select>
+      </label>
+      <button class="primary-button" type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+    <a class="ghost-button auth-wide" href="index.html">Continue as Guest</a>
+  </main>
+  <div class="toast-stack" id="toastStack"></div>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

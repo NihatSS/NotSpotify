@@ -1,0 +1,143 @@
+@media (max-width: 1120px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    padding-left: 8px;
+  }
+  .sidebar {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    bottom: calc(var(--player-h) + 8px);
+    height: auto;
+    width: min(86vw, 310px);
+    transform: translateX(calc(-100% - 18px));
+    transition: transform 180ms ease;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .mobile-only { display: inline-grid; }
+  .topbar { grid-template-columns: auto minmax(0, 1fr) 150px auto; }
+  .history-buttons { display: none; }
+  .hero-section { grid-template-columns: 1fr; }
+  .playlist-layout, .studio-grid, .search-page-layout, .results-grid { grid-template-columns: 1fr; }
+  .mini-player {
+    grid-template-columns: minmax(220px, 1fr) minmax(300px, 1.25fr);
+  }
+  .player-tools {
+    grid-template-columns: auto auto;
+    width: auto;
+  }
+  .player-tools #deviceBtn,
+  .player-tools #muteBtn,
+  .player-tools #volumeSlider { display: none; }
+  .queue-drawer { right: 14px; left: 14px; width: auto; }
+}
+
+@media (max-width: 760px) {
+  :root { --player-h: 160px; }
+  .app-shell {
+    padding: 0 0 calc(var(--player-h) + 62px);
+    gap: 0;
+  }
+  .main-content {
+    height: calc(100vh - var(--player-h) - 62px);
+    border-radius: 0;
+    padding: 0 14px 24px;
+  }
+  .topbar {
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    min-height: 66px;
+  }
+  .topbar select,
+  .profile-menu-wrap { display: none; }
+  .search-wrap { min-width: 0; }
+  .search-icon { display: none; }
+  .hero-section {
+    min-height: 0;
+    padding: 28px 0 18px;
+  }
+  .hero-copy h1 { font-size: 3rem; }
+  #visualizer { height: 150px; }
+  .section-head { align-items: start; flex-direction: column; }
+  .control-row { width: 100%; }
+  .song-grid, .artist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .song-grid.list-mode { grid-template-columns: 1fr; }
+  .song-card, .artist-card, .album-card { padding: 10px; }
+  .card-actions .tiny-button { display: none; }
+  .category-strip, .song-row, .artist-row, .album-row {
+    grid-auto-columns: minmax(150px, 168px);
+    gap: 10px;
+  }
+  .detail-hero, .detail-hero.artist {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: end;
+    min-height: 0;
+    padding: 80px 14px 22px;
+    margin: 0 -14px 20px;
+  }
+  .detail-hero img, .detail-hero.artist img {
+    width: 150px;
+    height: 150px;
+  }
+  .detail-hero h1 { font-size: 3.4rem; }
+  .mini-player {
+    height: var(--player-h);
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  .now-playing { grid-template-columns: 48px 1fr auto; }
+  .now-playing img { width: 48px; height: 48px; }
+  .transport .icon-button { width: 34px; height: 34px; }
+  .play-button { width: 42px; height: 42px; }
+  .player-tools { display: none; }
+  .toast-stack {
+    left: 12px;
+    right: 12px;
+    bottom: calc(var(--player-h) + 72px);
+  }
+  .track-row {
+    grid-template-columns: 36px minmax(0, 1fr) 54px;
+    padding: 8px;
+  }
+  .playlist-track-table .track-row,
+  .playlist-track-table .track-row.header {
+    grid-template-columns: 36px minmax(0, 1fr) 42px;
+  }
+  .track-row.header,
+  .track-row .track-album,
+  .track-row .track-artist { display: none; }
+  .page-head { align-items: start; flex-direction: column; }
+  .suggestion-item { grid-template-columns: 44px minmax(0, 1fr); }
+  .suggestion-item small { display: none; }
+  .mobile-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--player-h);
+    z-index: 49;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 62px;
+    background: #000000;
+    border-top: 1px solid #1c1c1c;
+  }
+  .mobile-nav a {
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+  .mobile-nav a.active { color: var(--text); }
+}
+
+@media (max-width: 440px) {
+  .song-grid, .artist-grid { grid-template-columns: 1fr 1fr; }
+  .hero-actions .primary-button,
+  .hero-actions .secondary-button { flex: 1; }
+  .progress-line { grid-template-columns: 38px 1fr 38px; font-size: 0.76rem; }
+  .detail-hero h1 { font-size: 2.85rem; }
+  .category-strip, .song-row, .artist-row, .album-row { grid-auto-columns: minmax(138px, 154px); }
+}
