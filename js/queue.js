@@ -17,9 +17,14 @@ export class QueueManager {
   }
 
   add(id, next = false) {
+    if (this.items.includes(id)) {
+      toast("This song is already in the queue");
+      return false;
+    }
     this.items = next ? [id, ...this.items] : [...this.items, id];
     this.save();
     toast(next ? "Added to Play Next" : "Added to queue");
+    return true;
   }
 
   shift() {

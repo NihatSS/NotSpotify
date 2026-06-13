@@ -1,5 +1,5 @@
-const CACHE = "pulsestream-v1";
-const ASSETS = ["./", "./index.html", "./login.html", "./signup.html", "./artist-dashboard.html", "./css/style.css", "./css/responsive.css"];
+const CACHE = "nospotify-v2";
+const ASSETS = ["./", "./index.html", "./css/style.css", "./css/responsive.css"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)));
 });

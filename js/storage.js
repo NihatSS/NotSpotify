@@ -5,10 +5,8 @@ export const keys = {
   recent: "ps:recent",
   volume: "ps:volume",
   theme: "ps:theme",
-  uploads: "ps:uploads",
-  users: "ps:users",
-  session: "ps:session",
-  searches: "ps:searches"
+  searches: "ps:searches",
+  followedArtists: "ps:followed-artists"
 };
 
 export function read(key, fallback) {
@@ -37,10 +35,6 @@ export function toast(message) {
   node.textContent = message;
   stack.append(node);
   setTimeout(() => node.remove(), 2600);
-}
-
-export function currentUser() {
-  return read(keys.session, null);
 }
 
 export function setTheme(theme) {

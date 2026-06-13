@@ -28,12 +28,12 @@ export class Player {
     if (nextIndex >= 0) this.index = nextIndex;
     this.current = this.songs[this.index];
     if (!this.current) {
-      console.warn("[PulseStream] Player load requested, but no matching song was found.", { id, songs: this.songs });
+      console.warn("[NoSpotify] Player load requested, but no matching song was found.", { id, songs: this.songs });
       return;
     }
 
     if (this.audio.src !== this.current.src) {
-      console.debug("[PulseStream] Loading audio", {
+      console.debug("[NoSpotify] Loading audio", {
         title: this.current.title,
         artists: this.current.artists,
         src: this.current.src,
@@ -41,7 +41,7 @@ export class Player {
       });
       this.audio.src = this.current.src;
       try { this.audio.load(); } catch (error) {
-        console.warn("[PulseStream] audio.load() failed.", error);
+        console.warn("[NoSpotify] audio.load() failed.", error);
       }
     }
 
@@ -55,7 +55,7 @@ export class Player {
     try {
       await this.audio.play();
     } catch (error) {
-      console.debug("[PulseStream] Browser blocked or delayed playback.", error);
+      console.debug("[NoSpotify] Browser blocked or delayed playback.", error);
       toast("Tap play to start audio");
     }
     this.onChange?.(this.current);
@@ -100,7 +100,7 @@ export class Player {
 
   async handleAudioError() {
     const song = this.current;
-    console.warn("[PulseStream] Audio failed to load.", {
+    console.warn("[NoSpotify] Audio failed to load.", {
       song,
       src: this.audio.currentSrc || this.audio.src,
       error: this.audio.error
@@ -114,17 +114,17 @@ export class Player {
       try {
         const response = await fetch(candidate, { method: "HEAD", cache: "no-store" });
         if (!response.ok) {
-          console.debug(`[PulseStream] Audio fallback missing ${candidate}: ${response.status}`);
+          console.debug(`[NoSpotify] Audio fallback missing ${candidate}: ${response.status}`);
           continue;
         }
-        console.info(`[PulseStream] Audio fallback loaded for ${song.title}: ${candidate}`);
+        console.info(`[NoSpotify] Audio fallback loaded for ${song.title}: ${candidate}`);
         this.audio.src = candidate;
         this.audio.load();
         try { await this.audio.play(); } catch {}
         toast("Loaded track from fallback source");
         return;
       } catch (error) {
-        console.debug("[PulseStream] Audio fallback failed.", { candidate, error });
+        console.debug("[NoSpotify] Audio fallback failed.", { candidate, error });
       }
     }
     toast("This track could not be loaded");

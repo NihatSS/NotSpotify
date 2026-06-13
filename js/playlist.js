@@ -3,10 +3,14 @@ import { keys, read, write, uid, toast } from "./storage.js";
 export class PlaylistManager {
   constructor(render) {
     this.render = render;
-    this.playlists = read(keys.playlists, [
-      { id: uid("playlist"), name: "Late Night Mix", songIds: ["midnight-city", "blue-hour", "rain"] },
-      { id: uid("playlist"), name: "Focus Flow", songIds: ["tidal", "slow-bloom", "loft"] }
-    ]);
+    const defaults = [
+      { id: uid("playlist"), name: "Late Night Mix", songIds: ["midnight-city", "blue-hour", "rain"], created: false },
+      { id: uid("playlist"), name: "Focus Flow", songIds: ["tidal", "slow-bloom", "loft"], created: false }
+    ];
+    this.playlists = read(keys.playlists, defaults).map((playlist) => ({
+      ...playlist,
+      created: playlist.created ?? !/^(Late Night Mix|Focus Flow)$/i.test(playlist.name)
+    }));
     this.selectedId = this.playlists[0]?.id || null;
     write(keys.playlists, this.playlists);
   }
@@ -18,7 +22,7 @@ export class PlaylistManager {
   }
 
   create(name) {
-    const playlist = { id: uid("playlist"), name, songIds: [] };
+    const playlist = { id: uid("playlist"), name, songIds: [], created: true };
     this.playlists.unshift(playlist);
     this.selectedId = playlist.id;
     this.save();

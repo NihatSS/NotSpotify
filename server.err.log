@@ -1,47 +1,12 @@
-127.0.0.1 - - [12/Jun/2026 12:29:08] "HEAD /assets/songs/Iniko-The%20King%27s%20Affirmation.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:29:09] "GET /assets/songs/manifest.json HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:29:09] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:29:37] "HEAD /assets/songs/%D1%84%D1%80%D0%BE%D0%B7%D0%B8%2C%20Mwizz%2C%20George%20Kipa-Don't%20Copy%20My%20Flow.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "GET /assets/songs/manifest.json HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Alec%20Benjamin-If%20We%20Have%20Each%20Other.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/BoyWithUke-Loafers.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Chris%20Grey-LET%20THE%20WORLD%20BURN.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/CITIZEN-CLOSE%20CALL.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Djo-End%20Of%20Beginning.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Ethan%20Ross-CYCLONE.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Fordo-JADED.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Iniko-The%20King's%20Affirmation.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/INOHA-Seventh%20Heaven.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Jace%20June-Come%20Home.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/Jace%20June-Goodbye%20My%20Baby.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:10] "HEAD /assets/songs/John%20Michael%20Howell-Feel%20Like%20A%20Monster.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/John%20Michael%20Howell-Missing%20Piece.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/John%20Michael%20Howell-Puppet.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/JVKE-her.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/Nafeesisboujee-Stephanie.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/NF-When%20I%20Grow%20Up.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/Rarin-Kompa.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/Spice%2C%20Sean%20Paul%2C%20Shaggy%20-%20Vietsub%20_%20Go%20Down%20Deh.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:11] code 404, message File not found
-127.0.0.1 - - [12/Jun/2026 12:31:11] "HEAD /assets/songs/%C3%91%C2%84%C3%91%C2%80%C3%90%C2%BE%C3%90%C2%B7%C3%90%C2%B8%2C%20Mwizz%2C%20George%20Kipa-Don't%20Copy%20My%20Flow.mp3 HTTP/1.1" 404 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "GET /assets/songs/manifest.json HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Alec%20Benjamin-If%20We%20Have%20Each%20Other.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/BoyWithUke-Loafers.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Chris%20Grey-LET%20THE%20WORLD%20BURN.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/CITIZEN-CLOSE%20CALL.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Djo-End%20Of%20Beginning.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Ethan%20Ross-CYCLONE.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Fordo-JADED.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Iniko-The%20King's%20Affirmation.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/INOHA-Seventh%20Heaven.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Jace%20June-Come%20Home.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Jace%20June-Goodbye%20My%20Baby.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/John%20Michael%20Howell-Feel%20Like%20A%20Monster.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/John%20Michael%20Howell-Missing%20Piece.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/John%20Michael%20Howell-Puppet.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/JVKE-her.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Nafeesisboujee-Stephanie.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/NF-When%20I%20Grow%20Up.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Rarin-Kompa.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/Spice%2C%20Sean%20Paul%2C%20Shaggy%20-%20Vietsub%20_%20Go%20Down%20Deh.mp3 HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 12:31:35] "HEAD /assets/songs/%D1%84%D1%80%D0%BE%D0%B7%D0%B8%2C%20Mwizz%2C%20George%20Kipa-Don't%20Copy%20My%20Flow.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:54:04] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:54:17] code 404, message File not found
+127.0.0.1 - - [13/Jun/2026 14:54:17] "GET /signup.html HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jun/2026 14:54:17] code 404, message File not found
+127.0.0.1 - - [13/Jun/2026 14:54:17] "GET /js/auth.js HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jun/2026 14:54:17] code 404, message File not found
+127.0.0.1 - - [13/Jun/2026 14:54:17] "GET /artist-dashboard.html HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jun/2026 14:54:17] code 404, message File not found
+127.0.0.1 - - [13/Jun/2026 14:54:17] "GET /login.html HTTP/1.1" 404 -
+127.0.0.1 - - [13/Jun/2026 14:55:55] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:55:55] "GET /manifest.webmanifest HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:55:55] "GET /sw.js HTTP/1.1" 200 -

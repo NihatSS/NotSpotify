@@ -85,6 +85,7 @@ export function normalizeSong(song, index = 0) {
     genre: formatName(song.genre || "Uploaded"),
     cover: song.cover || cover(id),
     plays: song.plays || 0,
+    duration: Number(song.duration) || estimateDuration(id),
     searchText: `${title} ${artists.join(" ")} ${song.album || ""} ${song.genre || ""}`.toLowerCase()
   };
 }
@@ -100,20 +101,20 @@ export async function loadAssetSongs() {
 
 async function loadAssetSongsOnce() {
   const files = await discoverSongFiles();
-  if (!files.length) console.warn("[PulseStream] No audio files discovered in assets/songs.");
+  if (!files.length) console.warn("[NoSpotify] No audio files discovered in assets/songs.");
   const resolved = await Promise.all(files.map(resolveSongFile));
   assetSongs = resolved
     .filter(Boolean)
     .map((song, index) => normalizeSong({ ...song, plays: 400 - index }, index));
-  console.info(`[PulseStream] Loaded ${assetSongs.length} playable local songs from assets/songs.`, assetSongs);
+  console.info(`[NoSpotify] Loaded ${assetSongs.length} playable local songs from assets/songs.`, assetSongs);
   return assetSongs;
 }
 
 async function discoverSongFiles() {
   const [fromManifest, fromListing] = await Promise.all([discoverFromManifest(), discoverFromDirectoryListing()]);
   const files = [...new Set([...fromManifest, ...fromListing].map((file) => safeDecode(file)).filter(Boolean))];
-  if (!files.length) console.warn("[PulseStream] Song discovery failed from manifest and directory listing.");
-  else console.info("[PulseStream] Discovered local song files:", files);
+  if (!files.length) console.warn("[NoSpotify] Song discovery failed from manifest and directory listing.");
+  else console.info("[NoSpotify] Discovered local song files:", files);
   return files;
 }
 
@@ -121,7 +122,7 @@ async function discoverFromManifest() {
   try {
     const response = await fetch("assets/songs/manifest.json", { cache: "no-store" });
     if (!response.ok) {
-      console.warn(`[PulseStream] Song manifest request failed: ${response.status}`);
+      console.warn(`[NoSpotify] Song manifest request failed: ${response.status}`);
       return [];
     }
     const data = await response.json();
@@ -129,7 +130,7 @@ async function discoverFromManifest() {
       .map((file) => String(file).split("/").pop())
       .filter((file) => /\.(mp3|wav|ogg|m4a)$/i.test(file));
   } catch (error) {
-    console.warn("[PulseStream] Could not read assets/songs/manifest.json.", error);
+    console.warn("[NoSpotify] Could not read assets/songs/manifest.json.", error);
     return [];
   }
 }
@@ -145,7 +146,7 @@ async function discoverFromDirectoryListing() {
       .filter((href) => /\.(mp3|wav|ogg|m4a)$/i.test(href))
       .map((href) => href.split("/").pop());
   } catch (error) {
-    console.warn("[PulseStream] Directory scan for assets/songs failed; manifest fallback may still work.", error);
+    console.warn("[NoSpotify] Directory scan for assets/songs failed; manifest fallback may still work.", error);
     return [];
   }
 }
@@ -156,7 +157,7 @@ async function resolveSongFile(filename, index) {
     try {
       const response = await fetch(src, { method: "HEAD", cache: "no-store" });
       if (response.ok) {
-        if (src !== candidates[0]) console.info(`[PulseStream] Resolved fallback for ${filename}: ${src}`);
+        if (src !== candidates[0]) console.info(`[NoSpotify] Resolved fallback for ${filename}: ${src}`);
         return {
           ...parseSongFilename(filename),
           id: slugify(filename) || `asset-song-${index}`,
@@ -165,17 +166,21 @@ async function resolveSongFile(filename, index) {
           candidates,
           cover: cover(filename),
           album: "Local Songs",
-          genre: "Local",
-          uploaded: false
+          genre: "Local"
         };
       }
-      console.debug(`[PulseStream] Missing audio candidate ${src}: ${response.status}`);
+      console.debug(`[NoSpotify] Missing audio candidate ${src}: ${response.status}`);
     } catch (error) {
-      console.debug(`[PulseStream] Failed audio candidate ${src}`, error);
+      console.debug(`[NoSpotify] Failed audio candidate ${src}`, error);
     }
   }
-  console.warn(`[PulseStream] Skipping missing audio file after trying ${candidates.length} candidates: ${filename}`, candidates);
+  console.warn(`[NoSpotify] Skipping missing audio file after trying ${candidates.length} candidates: ${filename}`, candidates);
   return null;
+}
+
+function estimateDuration(seed = "") {
+  const hash = [...String(seed)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return 160 + (hash % 150);
 }
 
 function songUrl(filename) {
